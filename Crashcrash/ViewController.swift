@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         let url = NSBundle.mainBundle().URLForResource("file", withExtension: "json")!
         let data = NSData(contentsOfURL: url)
         if let string = data?.toString() {
+            print(string) // Will not crash
+            NSLog("Log: \(string)") // Will crash on iphone 5c
             CLSNSLogv(string, getVaList([])) // Will crash on iphone 5c
         }
     }
